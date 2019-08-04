@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from api.models import Gradient
 from django.core import serializers
 from .serializers import GradientSerializer
+from rest_framework.renderers import JSONRenderer
 import random
 
 def index(request):
@@ -17,8 +18,12 @@ def getRandomGradient(request):
     #Choose a gradient at random
     randomGradient = Gradient.objects.filter(pk = random.randint(1, len(queryset)))
 
-    #Serialize and return the randomly selected gradient
-    return HttpResponse(serializers.serialize('json', randomGradient))
+    #Serialize to JSON
+    serializer = GradientSerializer(randomGradient, many=True)
+    serializedGradient = JSONRenderer().render(serializer.data)
+
+    return HttpResponse(serializedGradient)
+
 
 class GradientViewSet(viewsets.ModelViewSet):
     queryset = Gradient.objects.all()
