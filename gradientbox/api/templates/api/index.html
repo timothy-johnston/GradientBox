@@ -51,7 +51,12 @@
 
 
         <!-- <section id="test-form">
-            <form action={$ url 'api:addGradient'}
+            <form action="addgradient" method="post">
+                {% csrf_token %} 
+                <input type="submit" value="AddGradient">
+            
+
+            </form>
         </section> -->
 
     </body>
