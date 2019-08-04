@@ -11,7 +11,7 @@
 
         <!-- Bootstrap stylesheet goes before any other stylesheets -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" href="../../static/api/main.css" />
         <!-- <link rel="stylesheet" href="styles/social-circles.css"> -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </head>
@@ -48,10 +48,10 @@
                     </div> -->
                     <div id="conv-btn-container" class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-secondary active">
-                              <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                              <input type="radio" name="options" id="option1" autocomplete="off" checked>Hex Code
                             </label>
                             <label class="btn btn-secondary">
-                              <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                              <input type="radio" name="options" id="option2" autocomplete="off">RGBa
                             </label>
                           </div>
                     <p class="grad-css">background: linear-gradient(142deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 11%, rgba(252,176,69,1) 100%);</p>
@@ -59,12 +59,43 @@
             </div>
         </section>
         <section id="section-custom">
-            make custom gradient
+            <div id="gradient-creation-container" class="container">
+                <div id="color-picker-container">
+                    <div id="color-picker-1"></div>
+                    <div id="color-picker-2"></div>
+                </div>
+                <div id="rgba-input-container-1" class="gradient-input-group input-group">
+                    <span class="input-group-text">R</span>
+                    <input disabled id="rgba-input-R-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                    <span class="input-group-text">G</span>
+                    <input disabled id="rgba-input-G-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                    <span class="input-group-text">B</span>
+                    <input disabled id="rgba-input-B-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                </div>
+                <div id="hex-input-container" class="gradient-input-group input-group">
+                    <span class="input-group-text">Hexadecimal #</span>
+                    <input disabled id="hex-input-1" type="text" class="color-input hex-input form-control" placeholder="Username">
+                </div>
+                <div id="rgba-input-container-2" class="gradient-input-group input-group">
+                    <span class="input-group-text">R</span>
+                    <input disabled id="rgba-input-R-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                    <span class="input-group-text">G</span>
+                    <input disabled id="rgba-input-G-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                    <span class="input-group-text">B</span>
+                    <input disabled id="rgba-input-B-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                </div>
+                <div id="hex-input-container" class="gradient-input-group input-group">
+                    <span class="input-group-text">Hexadecimal #</span>
+                    <input disabled id="hex-input-2" type="text" class="color-input hex-input form-control" placeholder="Username">
+                </div>
+            </div> 
+            
         </section>
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script async src="../../static/api/iro.min.js"></script>
         <script async src="../../static/api/main.js"></script>
 
     </body>

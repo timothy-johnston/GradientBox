@@ -1,22 +1,73 @@
 // For color conversions:
 // https://github.com/bgrins/TinyColor
 
+//For hanlding user input of text rgb or hex:
+//Do an event listner for lose focus of text input field or submit button
+//  on lose focus, re-gen color pickers
+
 var apiURL = "http://127.0.0.1:8000";
 var apiPathRandomGradient = "/api/randomgradient";
 var apiPathGradients = "/api/gradients/";
 
 $( document ).ready(function() {
 
+    createColorPickers()
+
     
     test = {gradient_css: "testFromUI", gradient_name: "tj_gradient", gradient_author: "ui"};
 
-    addGradient(test)
+    initiateAddGradient(test)
 
 
 
 
 
 })
+
+function createColorPickers() {
+
+    var colorPicker1 = new iro.ColorPicker("#color-picker-1", {
+        width: 300,
+        color: "#ffffff"
+    });
+    var colorPicker2 = new iro.ColorPicker("#color-picker-2", {
+        width: 300,
+        color: "#bbbbbb"
+    });
+
+    colorPicker1.on(["color:init", "color:change"], function(color) {
+        updateInput1Fields(color)
+    });
+
+    colorPicker2.on(["color:init", "color:change"], function(color) {
+        updateInput2Fields(color)
+    });
+
+}
+
+function updateInput1Fields(color) {
+
+    var hex = color.hexString;
+    var rgbSplit = (color.rgbString).substring(4).split(",");
+
+    $("#rgba-input-R-1").val(parseInt(rgbSplit[0]));
+    $("#rgba-input-G-1").val(parseInt(rgbSplit[1]));
+    $("#rgba-input-B-1").val(parseInt(rgbSplit[2]));
+    $("#hex-input-1").val(hex.substring(1));
+
+}
+
+function updateInput2Fields(color) {
+
+    var hex = color.hexString;
+    var rgbSplit = (color.rgbString).substring(4).split(",");
+
+    $("#rgba-input-R-2").val(parseInt(rgbSplit[0]));
+    $("#rgba-input-G-2").val(parseInt(rgbSplit[1]));
+    $("#rgba-input-B-2").val(parseInt(rgbSplit[2]));
+    $("#hex-input-2").val(hex.substring(1));
+
+}
 
 function getRandomGradient() {
     $.ajax({
