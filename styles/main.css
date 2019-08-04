@@ -19,15 +19,75 @@ section {
 }
 
 .choice-container {
-    width: 100%;
+    width: 400px;
+    height: 400px;
     margin: 20px;
+    border-radius: 50%;
 }
 
 .btn-choice {
-    font-size: 5.5rem;
+    font-size: 4.0rem;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     padding: 50px;
+    border-radius: 50%
 }
+
+#section-surprise {
+    background: #46d4ff;
+}
+
+#details-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100vh;
+}
+
+.detail-container {
+    background: #b1b1b1;
+    width: 100%;
+    border-radius: 500px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.detail {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#conv-btn-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.grad-css {
+    text-align: center;
+    margin-bottom: 7px;
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+#section-custom {
+    background: #ffd7b1;
+}
+
+
 
