@@ -8,6 +8,7 @@
 var apiURL = "http://127.0.0.1:8000";
 var apiPathRandomGradient = "/api/randomgradient";
 var apiPathGradients = "/api/gradients/";
+var cssFormatCustomHex = true;
 
 $( document ).ready(function() {
 
@@ -20,8 +21,17 @@ $( document ).ready(function() {
     //Event listeners
     $('#btn-surprise').click(function() {
 
+    })
 
+    $('.lbl-colorformat-custom').click(function() {
 
+        if ($(this).attr('id') == "lbl-colorformat-hex-custom") {
+            cssFormatCustomHex = true;
+        } else {
+            cssFormatCustomHex = false;
+        }
+
+        updateGeneratedCss();
     })
 
 })
@@ -81,12 +91,12 @@ function updateGeneratedCss() {
     var colorString2;
 
 
-    if ($("#lbl-colorformat-hex-custom").hasClass("active")) {
+    if (cssFormatCustomHex) {
         colorString1 = "#" + $("#hex-input-1").val();
         colorString2 = "#" + $("#hex-input-2").val();
     } else {
-        colorString1 = "rgba(" + $("#rgba-input-R-1").val() + "," + $("#rgba-input-G-1").val() + ", " + $("#rgba-input-B-1").val() + ")";
-        colorString2 = "rgba(" + $("#rgba-input-R-2").val() + "," + $("#rgba-input-G-2").val() + ", " + $("#rgba-input-B-2").val() + ")";
+        colorString1 = "rgba(" + $("#rgba-input-R-1").val() + ", " + $("#rgba-input-G-1").val() + ", " + $("#rgba-input-B-1").val() + ")";
+        colorString2 = "rgba(" + $("#rgba-input-R-2").val() + ", " + $("#rgba-input-G-2").val() + ", " + $("#rgba-input-B-2").val() + ")";
     }
 
     var css = "linear-gradient(90deg, " + colorString1 + " 0%, " + colorString2 + " 100%);";
