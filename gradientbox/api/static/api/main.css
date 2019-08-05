@@ -6,11 +6,17 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background-image: linear-gradient(-20deg, #dcc7fc 0%, #fbfcdb 100%);
 }
 
 #welcome-prompt {
     text-align: center;
     font-size: 4.5rem;
+}
+
+#welcome-subtitle {
+    text-align: center;
+    font-size: 2.8rem;
 }
 
 #choices {
@@ -20,8 +26,8 @@ section {
 }
 
 .choice-container {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     margin: 20px;
     border-radius: 50%;
 }
@@ -31,27 +37,42 @@ section {
     width: 100%;
     height: 100%;
     padding: 50px;
-    border-radius: 50%
+    border-radius: 50%;
+    /* background: #ebfaff; */
+}
+
+.btn-choice:hover {
+    
 }
 
 #section-surprise {
-    background: #46d4ff;
+    /* background: #46d4ff; */
+    display: flex;
+    align-items: center;
 }
 
 #details-group {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    min-height: 100vh;
+    justify-content: center;
+    /* min-height: 100vh; */
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.253);
+    border-radius: 10px;
+    padding: 30px;
 }
 
 .detail-container {
     text-align: center;
+    margin: 15px 0px 15px 0px;
 }
 
 .detail-p {
-    /* font-size: 2.5rem; */
     text-align: center;
+}
+
+#gradient-surprise-css {
+    font-weight: bold;
 }
 
 .btn-group-colorformat {
@@ -63,13 +84,11 @@ section {
 
 .grad-css {
     text-align: center;
-    /* margin-bottom: 7px;
-    padding: 20px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid black;
-    border-radius: 15px; */
+}
+
+#btn-surprise-2 {
+    margin-top: 30px;
+    width: 100%;
 }
 
 
@@ -126,6 +145,10 @@ section {
 
 #generated-css-header, #generated-css {
     text-align: center;
+}
+
+#generated-css {
+    font-weight: bold;
 }
 
 #share-header {

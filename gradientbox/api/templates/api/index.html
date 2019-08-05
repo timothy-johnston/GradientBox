@@ -18,38 +18,45 @@
 
         <section id="section-welcome">
             <div id="welcome-prompt-container" class="container">
-                <p id="welcome-prompt">Click below for a fresh new gradient!</p>
+                <h1 class="display-1" id="welcome-prompt">A world of mystery and artistry awaits...</h1>
+            </div>
+            <div id="welcome-prompt-container" class="container">
+                <h4 class="display-4" id="welcome-subtitle">Choose to receive a random gradient made by a previous user or create and share your own.</h4>
             </div>
             <div id="choices" class="container">
                 <div class="choice-container">
-                    <button id="btn-surprise" type="button" class="btn btn-outline-primary btn-lg btn-choice">Surprise Me!</button>
+                    <button id="btn-surprise-1" type="button" class="btn btn-outline-primary btn-lg btn-choice btn-surprise"><h4 class="display-4">Surprise me.</h4></button>
                 </div>
                 <div class="choice-container">
-                    <button type="button" class="btn btn-outline-primary btn-lg btn-choice">I want to create my own!</button>
+                    <button id="btn-custom" type="button" class="btn btn-outline-primary btn-lg btn-choice"><h4 class="display-4">I want to create my own.</h4></button>
                 </div>
             </div>
         </section>
         <section id="section-surprise">
             <div id="details-group" class="container">
                 <div class="detail-container">
-                    <h3 class="detail-header display-4">Gradient Name</h3>
-                    <p class="detail-p">Moonlit Pancakes</p>
+                    <h4 class="detail-header display-4">Gradient Name</h4>
+                    <p id="gradient-surprise-name" class="detail-p"></p>
                 </div>
                 <div class="detail-container">
-                    <h3 class="detail-header display-4">Gradient Author</h3>
-                    <p class="detail-p">coolguy1991</p>
+                    <h4 class="detail-header display-4">Gradient Author</h4>
+                    <p id="gradient-surprise-author" class="detail-p"></p>
                 </div>
                 <div class="detail-container">
-                    <h3 class="detail-header display-4">Gradient CSS</h3>
-                    <div id="conv-btn-container" class="btn-group btn-group-toggle btn-group-colorformat" data-toggle="buttons">
+                    <h4 class="detail-header display-4">Gradient CSS</h4>
+                    <!-- <div id="conv-btn-container" class="btn-group btn-group-toggle btn-group-colorformat" data-toggle="buttons">
                         <label class="btn btn-secondary active">
                             <input type="radio" name="options" id="option1" autocomplete="off" checked>Hexadecimal
                         </label>
                         <label class="btn btn-secondary">
                             <input type="radio" name="options" id="option2" autocomplete="off">RGBa
                         </label>
-                    </div>
-                    <p class="grad-css">background: linear-gradient(142deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 11%, rgba(252,176,69,1) 100%);</p>
+                    </div> -->
+                    <p id="gradient-surprise-css" class="detail-p grad-css"></p>
+                </div>
+                <hr>
+                <div class="container">
+                    <button id="btn-surprise-2" type="button" class="btn btn-primary btn-surprise">Click for a new surprise gradient!</button>
                 </div>
             </div>
 

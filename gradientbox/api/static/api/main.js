@@ -13,15 +13,27 @@ var colorStringsToPersist;
 
 $( document ).ready(function() {
 
-    createColorPickers()
+    getRandomGradient();
+
+    createColorPickers();
 
     test = {gradient_css: "testFromUI", gradient_name: "tj_gradient", gradient_author: "ui"};
 
     initiateAddGradient(test)
 
     //Event listeners
-    $('#btn-surprise').click(function() {
+    $('.btn-surprise').click(function() {
+        $('html, body').animate({
+            scrollTop: $("#section-surprise").offset().top
+        }, 1000);
+        getRandomGradient();
+    })
 
+    $('#btn-custom').click(function() {
+        $('html, body').animate({
+            scrollTop: $("#section-custom").offset().top
+        }, 1000);
+        getRandomGradient();
     })
 
     $('.lbl-colorformat-custom').click(function() {
@@ -147,7 +159,11 @@ function updateRandomGradient(gradient) {
 
 function updateSurpriseGradSection(gradientCss, gradientName, gradientAuthor) {
 
-    //jQuery here to update the html
+    $('#gradient-surprise-name').text(gradientName);
+    $('#gradient-surprise-author').text(gradientAuthor);
+    $('#gradient-surprise-css').text(gradientCss + ";");
+
+    $('#section-surprise').css("background", gradientCss);
 
 }
 
