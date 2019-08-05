@@ -24,7 +24,7 @@
             </div>
             <div id="choices" class="container">
                 <div class="choice-container">
-                    <button type="button" class="btn btn-outline-primary btn-lg btn-choice">Surprise Me!</button>
+                    <button id="btn-surprise" type="button" class="btn btn-outline-primary btn-lg btn-choice">Surprise Me!</button>
                 </div>
                 <div class="choice-container">
                     <button type="button" class="btn btn-outline-primary btn-lg btn-choice">I want to create my own!</button>
@@ -56,22 +56,6 @@
             </div>
 
 
-
-
-
-
-
-                <!-- <div class="detail-container">
-                    <p class="detail">Gradient Name: Moonlit Pancakes</p>
-                </div>
-                <div class="detail-container">
-                    <p class="detail">Created By: gradientGrad</p>
-                </div>
-
-                <div class="detail-container">
-                    <p class="detail">CSS:</p> -->
-
-
         </section>
         <section id="section-custom">
             <div id="gradient-creation-container" class="container">
@@ -79,43 +63,49 @@
                     <div id="color-picker-1"></div>
                     <div id="color-picker-2"></div>
                 </div>
-                <h3 class="color-input-header display-4">Color 1</h3>
-                <div id="rgba-input-container-1" class="gradient-input-group input-group">
-                    <span class="input-group-text">R</span>
-                    <input disabled id="rgba-input-R-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                    <span class="input-group-text">G</span>
-                    <input disabled id="rgba-input-G-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                    <span class="input-group-text">B</span>
-                    <input disabled id="rgba-input-B-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                </div>
-                <div id="hex-input-container" class="gradient-input-group input-group">
-                    <span class="input-group-text">Hexadecimal #</span>
-                    <input disabled id="hex-input-1" type="text" class="color-input hex-input form-control" placeholder="Username">
-                </div>
-                <h3 class="color-input-header display-4">Color 2</h3>
-                <div id="rgba-input-container-2" class="gradient-input-group input-group">
-                    <span class="input-group-text">R</span>
-                    <input disabled id="rgba-input-R-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                    <span class="input-group-text">G</span>
-                    <input disabled id="rgba-input-G-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                    <span class="input-group-text">B</span>
-                    <input disabled id="rgba-input-B-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                </div>
-                <div id="hex-input-container" class="gradient-input-group input-group">
-                    <span class="input-group-text">Hexadecimal #</span>
-                    <input disabled id="hex-input-2" type="text" class="color-input hex-input form-control" placeholder="Username">
-                </div>
-                <div id="generated-css-container">
-                    <h3 id="generated-css-header" class="display-4">Gradient CSS</h3>
-                    <div class="btn-group btn-group-toggle btn-group-colorformat" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked>Hexadecimal
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off">RGBa
-                        </label>
+                <div>
+                    <h3 class="color-input-header display-4">Color 1</h3>
+                    <div id="rgba-input-container-1" class="gradient-input-group input-group">
+                        <span class="input-group-text">R</span>
+                        <input disabled id="rgba-input-R-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                        <span class="input-group-text">G</span>
+                        <input disabled id="rgba-input-G-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                        <span class="input-group-text">B</span>
+                        <input disabled id="rgba-input-B-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
                     </div>
-                    <p id="generated-css">This will be the generated css</p>
+                    <div id="hex-input-container" class="gradient-input-group input-group">
+                        <span class="input-group-text">Hexadecimal #</span>
+                        <input disabled id="hex-input-1" type="text" class="color-input hex-input form-control" placeholder="Username">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="color-input-header display-4">Color 2</h3>
+                    <div id="rgba-input-container-2" class="gradient-input-group input-group">
+                        <span class="input-group-text">R</span>
+                        <input disabled id="rgba-input-R-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                        <span class="input-group-text">G</span>
+                        <input disabled id="rgba-input-G-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                        <span class="input-group-text">B</span>
+                        <input disabled id="rgba-input-B-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                    </div>
+                    <div id="hex-input-container" class="gradient-input-group input-group">
+                        <span class="input-group-text">Hexadecimal #</span>
+                        <input disabled id="hex-input-2" type="text" class="color-input hex-input form-control" placeholder="Username">
+                    </div>
+                </div>
+                <div>
+                    <div id="generated-css-container">
+                        <h3 id="generated-css-header" class="display-4">Gradient CSS</h3>
+                        <div class="btn-group btn-group-toggle btn-group-colorformat" data-toggle="buttons">
+                            <label id="lbl-colorformat-hex-custom" class="btn btn-secondary active">
+                                <input id="btn-colorformat-hex-custom" type="radio" name="options" id="option1" autocomplete="off" checked>Hexadecimal
+                            </label>
+                            <label id="lbl-colorformat-rgb-custom" class="btn btn-secondary">
+                                <input id="btn-colorformat-rgb-custom" type="radio" name="options" id="option2" autocomplete="off">RGBa
+                            </label>
+                        </div>
+                        <p id="generated-css">This will be the generated css</p>
+                    </div>
                 </div>
             </div> 
             

@@ -13,10 +13,16 @@ $( document ).ready(function() {
 
     createColorPickers()
 
-    
     test = {gradient_css: "testFromUI", gradient_name: "tj_gradient", gradient_author: "ui"};
 
     initiateAddGradient(test)
+
+    //Event listeners
+    $('#btn-surprise').click(function() {
+
+
+
+    })
 
 })
 
@@ -33,11 +39,15 @@ function createColorPickers() {
 
     colorPicker1.on(["color:init", "color:change"], function(color) {
         updateInput1Fields(color)
+        updateGeneratedCss()
     });
 
     colorPicker2.on(["color:init", "color:change"], function(color) {
         updateInput2Fields(color)
+        updateGeneratedCss()
     });
+
+    
 
 }
 
@@ -62,6 +72,26 @@ function updateInput2Fields(color) {
     $("#rgba-input-G-2").val(parseInt(rgbSplit[1]));
     $("#rgba-input-B-2").val(parseInt(rgbSplit[2]));
     $("#hex-input-2").val(hex.substring(1));
+
+}
+
+function updateGeneratedCss() {
+
+    var colorString1;
+    var colorString2;
+
+
+    if ($("#lbl-colorformat-hex-custom").hasClass("active")) {
+        colorString1 = "#" + $("#hex-input-1").val();
+        colorString2 = "#" + $("#hex-input-2").val();
+    } else {
+        colorString1 = "rgba(" + $("#rgba-input-R-1").val() + "," + $("#rgba-input-G-1").val() + ", " + $("#rgba-input-B-1").val() + ")";
+        colorString2 = "rgba(" + $("#rgba-input-R-2").val() + "," + $("#rgba-input-G-2").val() + ", " + $("#rgba-input-B-2").val() + ")";
+    }
+
+    var css = "linear-gradient(90deg, " + colorString1 + " 0%, " + colorString2 + " 100%);";
+
+    $("#generated-css").text(css);
 
 }
 

@@ -83,12 +83,24 @@ section {
 
 #section-custom {
     background: #ffd7b1;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+#gradient-creation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    border: 1px solid black;
 }
 
 #color-picker-container {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
 
