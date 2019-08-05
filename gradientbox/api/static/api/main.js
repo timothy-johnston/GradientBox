@@ -18,10 +18,6 @@ $( document ).ready(function() {
 
     initiateAddGradient(test)
 
-
-
-
-
 })
 
 function createColorPickers() {
