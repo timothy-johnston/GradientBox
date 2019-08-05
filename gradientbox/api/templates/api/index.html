@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Tim Johnston's Portfolio</title>
+        <title>GradientBox</title>
 
         <!-- Bootstrap required meta tags -->
         <meta charset="utf-8">
@@ -22,7 +22,7 @@
             </div>
             <div id="choices" class="container">
                 <div class="choice-container">
-                    <button type="button" class="btn btn-outline-primary btn-lg btn-choice">Surprise Me!</button>
+                    <button id="btn-surprise" type="button" class="btn btn-outline-primary btn-lg btn-choice">Surprise Me!</button>
                 </div>
                 <div class="choice-container">
                     <button type="button" class="btn btn-outline-primary btn-lg btn-choice">I want to create my own!</button>
@@ -32,24 +32,97 @@
         <section id="section-surprise">
             <div id="details-group" class="container">
                 <div class="detail-container">
-                    <p class="detial">Gradient Name:</p>
+                    <h3 class="detail-header display-4">Gradient Name</h3>
+                    <p class="detail-p">Moonlit Pancakes</p>
                 </div>
                 <div class="detail-container">
-                    <p class="detial">Created By:</p>
+                    <h3 class="detail-header display-4">Gradient Author</h3>
+                    <p class="detail-p">coolguy1991</p>
                 </div>
                 <div class="detail-container">
-                    <p class="detial">CSS:</p>
+                    <h3 class="detail-header display-4">Gradient CSS</h3>
+                    <div id="conv-btn-container" class="btn-group btn-group-toggle btn-group-colorformat" data-toggle="buttons">
+                        <label class="btn btn-secondary active">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked>Hexadecimal
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option2" autocomplete="off">RGBa
+                        </label>
+                    </div>
+                    <p class="grad-css">background: linear-gradient(142deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 11%, rgba(252,176,69,1) 100%);</p>
                 </div>
             </div>
+
+
         </section>
         <section id="section-custom">
-            make custom gradient
+            <div id="gradient-creation-container" class="container">
+                <div id="color-picker-container">
+                    <div id="color-picker-1"></div>
+                    <div id="color-picker-2"></div>
+                </div>
+                <div id="input-container-group-container">
+                    <div class="input-container-group">
+                        <h4 class="color-input-header display-4">Color 1</h4>
+                        <div id="rgba-input-container-1" class="gradient-input-group input-group">
+                            <span class="input-group-text">R</span>
+                            <input disabled id="rgba-input-R-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                            <span class="input-group-text">G</span>
+                            <input disabled id="rgba-input-G-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                            <span class="input-group-text">B</span>
+                            <input disabled id="rgba-input-B-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                        </div>
+                        <div id="hex-input-container" class="gradient-input-group input-group">
+                            <span class="input-group-text">Hexadecimal #</span>
+                            <input disabled id="hex-input-1" type="text" class="color-input hex-input form-control" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="input-container-group">
+                        <h4 class="color-input-header display-4">Color 2</h4>
+                        <div id="rgba-input-container-2" class="gradient-input-group input-group">
+                            <span class="input-group-text">R</span>
+                            <input disabled id="rgba-input-R-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                            <span class="input-group-text">G</span>
+                            <input disabled id="rgba-input-G-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                            <span class="input-group-text">B</span>
+                            <input disabled id="rgba-input-B-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                        </div>
+                        <div id="hex-input-container" class="gradient-input-group input-group">
+                            <span class="input-group-text">Hexadecimal #</span>
+                            <input disabled id="hex-input-2" type="text" class="color-input hex-input form-control" placeholder="Username">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="generated-css-container">
+                        <h4 id="generated-css-header" class="display-4">Gradient CSS</h4>
+                        <div class="btn-group btn-group-toggle btn-group-colorformat" data-toggle="buttons">
+                            <label id="lbl-colorformat-hex-custom" class="btn btn-secondary active lbl-colorformat-custom">
+                                <input id="btn-colorformat-hex-custom" type="radio" name="options" id="option1" autocomplete="off" checked>Hexadecimal
+                            </label>
+                            <label id="lbl-colorformat-rgb-custom" class="btn btn-secondary lbl-colorformat-custom">
+                                <input id="btn-colorformat-rgb-custom" type="radio" name="options" id="option2" autocomplete="off">RGBa
+                            </label>
+                        </div>
+                        <p id="generated-css">This will be the generated css</p>
+                    </div>
+                </div>
+                <div id="gradient-submit-container">
+                    <h4 id="share-header" class="display-4">Share your masterpiece!</h4>
+                    <div id="submit-input-container" class="gradient-input-group">
+                        <input id="submit-gradient-name" type="text" class="form-control gradient-submit-input" placeholder="Give your gradient a name worthy of its beauty">
+                        <input id="submit-author-name" type="text" class="form-control gradient-submit-input" placeholder="Enter your name, nickname, secret identity, etc.">
+                        <input id="gradient-submit-btn" class="btn btn-primary" type="submit" value="Submit">
+                    </div>
+                </div>
+            </div> 
+            
         </section>
-
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script async src="../../static/api/iro.min.js"></script>
         <script async src="../../static/api/main.js"></script>
 
     </body>
