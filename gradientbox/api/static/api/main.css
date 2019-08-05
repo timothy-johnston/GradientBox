@@ -92,8 +92,20 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     border: 1px solid black;
+}
+
+#input-container-group-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.input-container-group {
+    min-width: 300px;
+    max-width: 500px;
 }
 
 #color-picker-container {
@@ -102,6 +114,20 @@ section {
     flex-wrap: wrap;
     margin-bottom: 50px;
 }
+
+#generated-css-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#generated-css-header, #generated-css {
+    text-align: center;
+}
+
+/* .input-container-group, #generated-css-container, #gradient-submit-container {
+    background-color: rgba(255, 255, 255, 0.253);
+    border-radius: 10px;
+} */
 
 
 

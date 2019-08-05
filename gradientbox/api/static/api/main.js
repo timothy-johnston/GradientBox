@@ -39,12 +39,12 @@ $( document ).ready(function() {
 function createColorPickers() {
 
     var colorPicker1 = new iro.ColorPicker("#color-picker-1", {
-        width: 300,
+        width: 250,
         color: "#ffffff"
     });
     var colorPicker2 = new iro.ColorPicker("#color-picker-2", {
-        width: 300,
-        color: "#bbbbbb"
+        width: 250,
+        color: "#ffffff"
     });
 
     colorPicker1.on(["color:init", "color:change"], function(color) {
@@ -99,9 +99,17 @@ function updateGeneratedCss() {
         colorString2 = "rgba(" + $("#rgba-input-R-2").val() + ", " + $("#rgba-input-G-2").val() + ", " + $("#rgba-input-B-2").val() + ")";
     }
 
-    var css = "linear-gradient(90deg, " + colorString1 + " 0%, " + colorString2 + " 100%);";
+    var css = "linear-gradient(90deg, " + colorString1 + " 0%, " + colorString2 + " 100%)";
 
-    $("#generated-css").text(css);
+    $("#generated-css").text(css + ";");
+
+    updateCustomSectionBackground(css);
+
+}
+
+function updateCustomSectionBackground(css) {
+
+    $('#section-custom').css("background", css);
 
 }
 

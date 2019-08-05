@@ -63,39 +63,41 @@
                     <div id="color-picker-1"></div>
                     <div id="color-picker-2"></div>
                 </div>
-                <div>
-                    <h3 class="color-input-header display-4">Color 1</h3>
-                    <div id="rgba-input-container-1" class="gradient-input-group input-group">
-                        <span class="input-group-text">R</span>
-                        <input disabled id="rgba-input-R-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                        <span class="input-group-text">G</span>
-                        <input disabled id="rgba-input-G-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                        <span class="input-group-text">B</span>
-                        <input disabled id="rgba-input-B-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                <div id="input-container-group-container">
+                    <div class="input-container-group">
+                        <h4 class="color-input-header display-4">Color 1</h4>
+                        <div id="rgba-input-container-1" class="gradient-input-group input-group">
+                            <span class="input-group-text">R</span>
+                            <input disabled id="rgba-input-R-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                            <span class="input-group-text">G</span>
+                            <input disabled id="rgba-input-G-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                            <span class="input-group-text">B</span>
+                            <input disabled id="rgba-input-B-1" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                        </div>
+                        <div id="hex-input-container" class="gradient-input-group input-group">
+                            <span class="input-group-text">Hexadecimal #</span>
+                            <input disabled id="hex-input-1" type="text" class="color-input hex-input form-control" placeholder="Username">
+                        </div>
                     </div>
-                    <div id="hex-input-container" class="gradient-input-group input-group">
-                        <span class="input-group-text">Hexadecimal #</span>
-                        <input disabled id="hex-input-1" type="text" class="color-input hex-input form-control" placeholder="Username">
-                    </div>
-                </div>
-                <div>
-                    <h3 class="color-input-header display-4">Color 2</h3>
-                    <div id="rgba-input-container-2" class="gradient-input-group input-group">
-                        <span class="input-group-text">R</span>
-                        <input disabled id="rgba-input-R-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                        <span class="input-group-text">G</span>
-                        <input disabled id="rgba-input-G-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                        <span class="input-group-text">B</span>
-                        <input disabled id="rgba-input-B-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
-                    </div>
-                    <div id="hex-input-container" class="gradient-input-group input-group">
-                        <span class="input-group-text">Hexadecimal #</span>
-                        <input disabled id="hex-input-2" type="text" class="color-input hex-input form-control" placeholder="Username">
+                    <div class="input-container-group">
+                        <h4 class="color-input-header display-4">Color 2</h4>
+                        <div id="rgba-input-container-2" class="gradient-input-group input-group">
+                            <span class="input-group-text">R</span>
+                            <input disabled id="rgba-input-R-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                            <span class="input-group-text">G</span>
+                            <input disabled id="rgba-input-G-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                            <span class="input-group-text">B</span>
+                            <input disabled id="rgba-input-B-2" type="text" class="color-input rgba-input form-control" placeholder="Username">
+                        </div>
+                        <div id="hex-input-container" class="gradient-input-group input-group">
+                            <span class="input-group-text">Hexadecimal #</span>
+                            <input disabled id="hex-input-2" type="text" class="color-input hex-input form-control" placeholder="Username">
+                        </div>
                     </div>
                 </div>
                 <div>
                     <div id="generated-css-container">
-                        <h3 id="generated-css-header" class="display-4">Gradient CSS</h3>
+                        <h4 id="generated-css-header" class="display-4">Gradient CSS</h4>
                         <div class="btn-group btn-group-toggle btn-group-colorformat" data-toggle="buttons">
                             <label id="lbl-colorformat-hex-custom" class="btn btn-secondary active lbl-colorformat-custom">
                                 <input id="btn-colorformat-hex-custom" type="radio" name="options" id="option1" autocomplete="off" checked>Hexadecimal
@@ -105,6 +107,14 @@
                             </label>
                         </div>
                         <p id="generated-css">This will be the generated css</p>
+                    </div>
+                </div>
+                <div id="gradient-submit-container">
+                    <h4 class="display-4">Share your masterpiece!</h4>
+                    <div id="submit-input-container" class="gradient-input-group input-group">
+                        <input id="submit-gradient-name" type="text" class="form-control" placeholder="Give your gradient a name worthy of its beauty">
+                        <input id="submit-author-name" type="text" class="form-control" placeholder="Enter your name, nickname, secret identity, etc.">
+                        <input class="btn btn-primary" type="submit" value="Submit">
                     </div>
                 </div>
             </div> 
