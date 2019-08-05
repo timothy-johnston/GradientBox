@@ -9,6 +9,7 @@ var apiURL = "http://127.0.0.1:8000";
 var apiPathRandomGradient = "/api/randomgradient";
 var apiPathGradients = "/api/gradients/";
 var cssFormatCustomHex = true;
+var colorStringsToPersist;
 
 $( document ).ready(function() {
 
@@ -33,6 +34,10 @@ $( document ).ready(function() {
 
         updateGeneratedCss();
     })
+
+    $('#gradient-submit-btn').click(function() {
+        initiateAddGradient();
+    });
 
 })
 
@@ -101,6 +106,8 @@ function updateGeneratedCss() {
 
     var css = "linear-gradient(90deg, " + colorString1 + " 0%, " + colorString2 + " 100%)";
 
+    colorStringsToPersist = ["#" + $("#hex-input-1").val(), "#" + $("#hex-input-2").val()];
+
     $("#generated-css").text(css + ";");
 
     updateCustomSectionBackground(css);
@@ -158,6 +165,12 @@ function getGradientProperties() {
 
     //jQuery to get values from css, author, and name fields
 
+    var css = "linear-gradient(90deg, " + colorStringsToPersist[0] + " 0%, " + colorStringsToPersist[1]  + " 100%)";
+
+    var properties = {gradient_css: css, gradient_name: $('#submit-gradient-name').val(), gradient_author: $('#submit-author-name').val()};
+
+    return properties;
+
 }
 
 function addGradientAjaxRequest(gradient) {
@@ -171,7 +184,7 @@ function addGradientAjaxRequest(gradient) {
 		contentType: 'application/json',
 		data: JSON.stringify(payload),
 		success: function(result, status, xhr){
-			console.log("great job man!");
+			console.log("great job!");
 		}
 	});
 }

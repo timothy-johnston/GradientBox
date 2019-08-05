@@ -108,6 +108,10 @@ section {
     max-width: 500px;
 }
 
+.color-input-header {
+    text-align: center;
+}
+
 #color-picker-container {
     display: flex;
     justify-content: space-evenly;
@@ -122,6 +126,30 @@ section {
 
 #generated-css-header, #generated-css {
     text-align: center;
+}
+
+#share-header {
+    text-align: center;
+}
+
+#submit-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+}
+
+.gradient-submit-input {
+    min-width: 350px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gradient-submit-btn {
+    min-width: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* .input-container-group, #generated-css-container, #gradient-submit-container {
