@@ -25,8 +25,7 @@ SECRET_KEY = 'voh=ytk67sglh&d##+%q1x*@$vqa)+iy2q!oqk9z&(f^ukg#@d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['community.pythonanywhere.com','tedwardj11.pythonanywhere.com']
 
 # Application definition
 
@@ -118,5 +117,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+
+STATIC_ROOT = '/home/tedwardj11/workspace/GradientBox/gradientbox/api/static'
 
 STATIC_URL = '/static/'
