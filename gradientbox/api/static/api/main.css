@@ -1,3 +1,37 @@
+@media (min-width: 320px) and (max-width: 767px) {
+  
+    #welcome-prompt {
+        font-size: 3.5rem !important;
+    }
+
+    #welcome-subtitle {
+        font-size: 2.5rem !important;
+    }
+
+    .choice-container {
+        margin: 5px !important;
+    }
+
+    .btn-choice {
+        font-size: 1.0rem !important;
+        width: 175px !important;
+        height: 175px !important;
+        padding: 5px !important
+    }
+
+    .btn-choice h4 {
+        font-size: 1.3rem !important;
+    }
+
+
+
+    #gradient-submit-btn {
+        width: 100% !important;
+    }
+
+}
+
+
 section {
     min-height: 100vh;
 }
@@ -5,7 +39,7 @@ section {
 #section-welcome {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-image: linear-gradient(-20deg, #dcc7fc 0%, #fbfcdb 100%);
 }
 
@@ -26,16 +60,16 @@ section {
 }
 
 .choice-container {
-    width: 350px;
-    height: 350px;
+    /* width: 350px; */
+    /* height: 350px; */
     margin: 20px;
     border-radius: 50%;
 }
 
 .btn-choice {
     font-size: 2.5rem;
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
     padding: 50px;
     border-radius: 50%;
     /* background: #ebfaff; */
