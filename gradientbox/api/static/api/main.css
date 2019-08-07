@@ -38,10 +38,32 @@
         font-size: 2rem !important
     }
 
+    #color-picker-container {
+        margin-top: 20px !important
+    }
+
+    .input-container-group h4, #generated-css-header, #share-header {
+        font-size: 2rem;
+    }
+
+    #color-picker-container {
+        margin-bottom: 10px !important;
+    }
+
+    .input-container-group {
+        margin-top: 5px !important;
+    }
+
+    #gradient-submit-container {
+        margin-top: 30px !important;
+    }
+
+
 
 
     #gradient-submit-btn {
         width: 100% !important;
+        margin-bottom: 30px;
     }
 
 }
@@ -141,19 +163,8 @@ section {
 }
 
 
-
-
-
-
-
-
-
-
 #section-custom {
     background: #ffd7b1;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
 }
 
 #gradient-creation-container {

@@ -56,12 +56,14 @@ $( document ).ready(function() {
 
 function createColorPickers() {
 
+    var wheelWidth = setColorPickerWidth()
+
     var colorPicker1 = new iro.ColorPicker("#color-picker-1", {
-        width: 250,
+        width: wheelWidth,
         color: "#ffffff"
     });
     var colorPicker2 = new iro.ColorPicker("#color-picker-2", {
-        width: 250,
+        width: wheelWidth,
         color: "#ffffff"
     });
 
@@ -76,6 +78,23 @@ function createColorPickers() {
     });
 
     
+
+}
+
+//Can't set wheel width with css, so for mobile set width on page 
+//load based on screen width
+function setColorPickerWidth() {
+    
+    var windowWidth = $(window).width();
+    var wheelWidth;
+
+    if (windowWidth >= 767) {
+        wheelWidth = 250;
+    } else {
+        wheelWidth = 150;
+    }
+
+    return wheelWidth;
 
 }
 
