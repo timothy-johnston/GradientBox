@@ -1,4 +1,4 @@
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 0px) and (max-width: 767px) {
   
     #welcome-prompt {
         font-size: 3.5rem !important;
@@ -21,6 +21,21 @@
 
     .btn-choice h4 {
         font-size: 1.3rem !important;
+    }
+
+    #details-group {
+        max-width: 450px !important;
+        padding: 15px !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+    }
+
+    .detail-container {
+        margin: 0px !important;
+    }
+
+    .detail-header {
+        font-size: 2rem !important
     }
 
 
@@ -106,7 +121,7 @@ section {
 }
 
 #gradient-surprise-css {
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .btn-group-colorformat {
