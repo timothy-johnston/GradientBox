@@ -230,9 +230,37 @@ function addGradientAjaxRequest(gradient) {
 		contentType: 'application/json',
 		data: JSON.stringify(payload),
 		success: function(result, status, xhr){
-			//TODO: Display Submission Successful notification
+            
+            //Submission was successful. Notify the user
+            var successMessage = "Submission successful! You're a true artist."
+            showTopNotification(successMessage);
+
+            clearInputFields();
+
+
 		}
 	});
+}
+
+//Displays the top notification box for 30 seconds
+function showTopNotification(message) {
+    $('#notification-top').text(message);
+    $('#notification-box-top').fadeToggle("fast", "linear");
+    $('#notification-box-top').css("display", "flex");
+    $('#notification-box-top').css("flex-direction", "column");
+    $('#notification-box-top').css("justify-content", "center");
+
+    //Close notification after 5 seconds
+    setTimeout(closeTopNotification, 5000);
+
+}
+
+function clearInputFields() {
+
+}
+
+function closeTopNotification() {
+    $('#notification-box-top').fadeToggle("slow", "linear");
 }
 
 //Following django tutorial to get a cookie
