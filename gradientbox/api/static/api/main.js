@@ -194,20 +194,34 @@ function updateSurpriseGradSection(gradientCss, gradientName, gradientAuthor) {
 
 function initiateAddGradient() {
 
-    //Gets an array of gradient css, name, and author
-    gradientProperties = getGradientProperties()
+    //Ensure user has entered an author name and gradient name
+    if (gradientInputIsValid()) {
 
-    //POST request, persist gradient to db
-    addGradientAjaxRequest(gradientProperties)
+        //Gets an array of gradient css, name, and author
+        gradientProperties = getGradientProperties()
 
+        //POST request, persist gradient to db
+        addGradientAjaxRequest(gradientProperties)
+
+    } else {
+        validateMessage = "Please enter values for gradient name and author."
+        showTopNotification(validateMessage);
+
+        //Disable submit button for 5 seconds
+        $('#gradient-submit-btn').prop("disabled", true);
+        setTimeout(enableSubmitButton, 5000);
+    }
+}
+
+//Reenable submit button
+function enableSubmitButton() {
+    $('#gradient-submit-btn').prop("disabled", false);
 }
 
 function getGradientProperties() {
 
     //jQuery to get values from css, author, and name fields
-
     var css = "linear-gradient(90deg, " + colorStringsToPersist[0] + " 0%, " + colorStringsToPersist[1]  + " 100%)";
-
     var properties = {gradient_css: css, gradient_name: $('#submit-gradient-name').val(), gradient_author: $('#submit-author-name').val()};
 
     return properties;
@@ -242,6 +256,15 @@ function addGradientAjaxRequest(gradient) {
 	});
 }
 
+//Validates that user has entered gradient name and author information
+//Very basic for now - TODO check for length, obscenity, etc
+function gradientInputIsValid() {
+    if ($('#submit-gradient-name').val().length > 0 && $('#submit-gradient-author').val().length > 0 ) {
+        return true;
+    }
+    return false;
+}
+
 //Displays the top notification box for 30 seconds
 function showTopNotification(message) {
     $('#notification-top').text(message);
@@ -256,7 +279,7 @@ function showTopNotification(message) {
 }
 
 function clearInputFields() {
-
+    $('.gradient-submit-input').val('');
 }
 
 function closeTopNotification() {
