@@ -49,6 +49,15 @@ $( document ).ready(function() {
     })
 
     $('#gradient-submit-btn').click(function() {
+
+        //Need to do some validations here
+        //Use jQuery validate to check that a gradient and author name have been entered
+
+        //Use ajax call to get gradients and confirm this css hasn't been used before
+        //Will need to put initiateAddGradient in the success callback block
+        //  AFTER doing an if (!allPreviousGradientCss.includes(CssToSubmit))
+        //      else display error message
+
         initiateAddGradient();
     });
 
@@ -220,7 +229,7 @@ function addGradientAjaxRequest(gradient) {
 		contentType: 'application/json',
 		data: JSON.stringify(payload),
 		success: function(result, status, xhr){
-			console.log("great job!");
+			//TODO: Display Submission Successful notification
 		}
 	});
 }

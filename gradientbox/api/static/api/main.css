@@ -38,6 +38,11 @@
         font-size: 2rem !important
     }
 
+    #gradient-creation-container {
+        padding-left: 30px !important;
+        padding-right: 30px !important; 
+    }
+
     #color-picker-container {
         margin-top: 20px !important
     }
@@ -57,9 +62,6 @@
     #gradient-submit-container {
         margin-top: 30px !important;
     }
-
-
-
 
     #gradient-submit-btn {
         width: 100% !important;
