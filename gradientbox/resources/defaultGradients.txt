@@ -1,0 +1,32 @@
+[
+    {
+        "gradient_css": "linear-gradient(90deg, #00ffa2 0%, #70fffa 100%)",
+        "gradient_name": "GradientBox Team",
+        "gradient_author": "Iguana Hang Out With You"
+    },
+    {
+        "gradient_css": "linear-gradient(90deg, #f570ff 0%, #ffd045 100%)",
+        "gradient_name": "GradientBox Team",
+        "gradient_author": "Bloomfield Sunset"
+    },
+    {
+        "gradient_css": "linear-gradient(90deg, #21edff 0%, #3700ff 100%)",
+        "gradient_name": "GradientBox Team",
+        "gradient_author": "Bermuda"
+    },
+    {
+        "gradient_css": "linear-gradient(90deg, #f080ff 0%, #1c02b0 100%)",
+        "gradient_name": "GradientBox Team",
+        "gradient_author": "The Northbound Goose"
+    },
+    {
+        "gradient_css": "linear-gradient(90deg, #ffffff 0%, #ffffff 100%)",
+        "gradient_name": "GradientBox Team",
+        "gradient_author": "The Northbound Goose"
+    },
+    {
+        "gradient_css": "linear-gradient(90deg, #ffeeba 0%, #ffa3b7 100%)",
+        "gradient_name": "GradientBox Team",
+        "gradient_author": "Peach Ring"
+    }
+]
