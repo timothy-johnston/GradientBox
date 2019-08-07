@@ -1,11 +1,11 @@
 @media (min-width: 0px) and (max-width: 767px) {
-  
+
     #welcome-prompt {
-        font-size: 3.5rem !important;
+        font-size: 3.0rem !important;
     }
 
     #welcome-subtitle {
-        font-size: 2.5rem !important;
+        font-size: 2.0rem !important;
     }
 
     .choice-container {
@@ -73,6 +73,27 @@
 
 section {
     min-height: 100vh;
+}
+
+.notification-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background: #151515;
+}
+
+#notification-box-top {
+    position: fixed;
+    box-shadow: 0px 15px 10px -5px;
+    /* display: none; */
+}
+
+.notification-text {
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 2.0rem;
 }
 
 #section-welcome {
@@ -197,6 +218,7 @@ section {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-top: 5px;
     margin-bottom: 50px;
 }
 
