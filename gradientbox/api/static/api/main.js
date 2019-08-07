@@ -18,10 +18,6 @@ $( document ).ready(function() {
 
     createColorPickers();
 
-    test = {gradient_css: "testFromUI", gradient_name: "tj_gradient", gradient_author: "ui"};
-
-    initiateAddGradient(test)
-
     //Event listeners
     $('.btn-surprise').click(function() {
         $('html, body').animate({
@@ -225,6 +221,11 @@ function addGradientAjaxRequest(gradient) {
 	$.ajax({
 		url: apiURL + apiPathGradients,
 		dataType: 'json',
+		beforeSend: function(xhr, settings) {
+			if (!this.crossDomain) {
+				xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+			}
+		},
 		type: 'post',
 		contentType: 'application/json',
 		data: JSON.stringify(payload),
@@ -233,3 +234,22 @@ function addGradientAjaxRequest(gradient) {
 		}
 	});
 }
+
+//Following django tutorial to get a cookie
+//Will be initially used to get the csrf token for our ajax post
+function getCookie(cookieName) {
+
+	var cookieValue = null;
+	if (document.cookie && document.cookie !== '') {
+		var cookies = document.cookie.split(';');
+		for (var i = 0; i < cookies.length; i++) {
+			var cookie = jQuery.trim(cookies[i]);
+			if (cookie.substring(0, cookieName.length + 1) === (cookieName + '=')) {
+				cookieValue = decodeURIComponent(cookie.substring(cookieName.length + 1));
+				break;
+			}
+		}
+	}
+	return cookieValue
+}
+

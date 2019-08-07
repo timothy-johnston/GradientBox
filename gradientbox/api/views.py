@@ -5,8 +5,11 @@ from api.models import Gradient
 from django.core import serializers
 from .serializers import GradientSerializer
 from rest_framework.renderers import JSONRenderer
+from django.views.decorators.csrf import ensure_csrf_cookie
+
 import random
 
+@ensure_csrf_cookie
 def index(request):
     return render(request, 'api/index.html', context=None)
 
