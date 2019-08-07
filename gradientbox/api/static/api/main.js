@@ -18,10 +18,6 @@ $( document ).ready(function() {
 
     createColorPickers();
 
-    test = {gradient_css: "testFromUI", gradient_name: "tj_gradient", gradient_author: "ui"};
-
-    initiateAddGradient(test)
-
     //Event listeners
     $('.btn-surprise').click(function() {
         $('html, body').animate({
