@@ -5,8 +5,8 @@
 //Do an event listner for lose focus of text input field or submit button
 //  on lose focus, re-gen color pickers
 
-// var apiURL = "https://tedwardj11.pythonanywhere.com";
-var apiURL = "http://127.0.0.1:8000";
+var apiURL = "https://tedwardj11.pythonanywhere.com";
+//var apiURL = "http://127.0.0.1:8000";
 var apiPathRandomGradient = "/api/randomgradient";
 var apiPathGradients = "/api/gradients/";
 var cssFormatCustomHex = true;
@@ -259,8 +259,10 @@ function addGradientAjaxRequest(gradient) {
 //Validates that user has entered gradient name and author information
 //Very basic for now - TODO check for length, obscenity, etc
 function gradientInputIsValid() {
-    if ($('#submit-gradient-name').val().length > 0 && $('#submit-gradient-author').val().length > 0 ) {
-        return true;
+    if ($('#submit-gradient-name').val() != null && $('#submit-gradient-name').val() != undefined && $('#submit-author-name').val() != null && $('#submit-author-name').val() != undefined) {
+    	if ($('#submit-gradient-name').val().length > 0 && $('#submit-author-name').val().length >  0 ) {
+        	return true;
+    	}
     }
     return false;
 }
