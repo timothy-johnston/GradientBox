@@ -1,11 +1,19 @@
 @media (min-width: 0px) and (max-width: 767px) {
-  
+
+    .notification-box {
+        height: 100px !important;
+    }
+    
+    .notification-text {
+        font-size: 1.5rem !important;
+    }
+
     #welcome-prompt {
-        font-size: 3.5rem !important;
+        font-size: 2.5rem !important;
     }
 
     #welcome-subtitle {
-        font-size: 2.5rem !important;
+        font-size: 1.5rem !important;
     }
 
     .choice-container {
@@ -73,6 +81,29 @@
 
 section {
     min-height: 100vh;
+}
+
+.notification-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75px;
+    width: 100%;
+    background: #151515;
+    z-index: 99;
+}
+
+#notification-box-top {
+    position: fixed;
+    box-shadow: 0px 15px 10px -5px;
+    display: none;
+}
+
+.notification-text {
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 2.0rem;
+    color: #FFFFFF;
 }
 
 #section-welcome {
@@ -175,6 +206,7 @@ section {
     justify-content: center;
     min-height: 100vh;
     /* border: 1px solid black; */
+    padding-bottom: 15px;
 }
 
 #input-container-group-container {
@@ -197,6 +229,7 @@ section {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-top: 5px;
     margin-bottom: 50px;
 }
 

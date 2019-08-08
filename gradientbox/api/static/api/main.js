@@ -1,12 +1,8 @@
 // For color conversions:
 // https://github.com/bgrins/TinyColor
 
-//For hanlding user input of text rgb or hex:
-//Do an event listner for lose focus of text input field or submit button
-//  on lose focus, re-gen color pickers
-
 var apiURL = "https://tedwardj11.pythonanywhere.com";
-// var apiURL = "http://127.0.0.1:8000";
+//var apiURL = "http://127.0.0.1:8000";
 var apiPathRandomGradient = "/api/randomgradient";
 var apiPathGradients = "/api/gradients/";
 var cssFormatCustomHex = true;
@@ -46,10 +42,7 @@ $( document ).ready(function() {
 
     $('#gradient-submit-btn').click(function() {
 
-        //Need to do some validations here
-        //Use jQuery validate to check that a gradient and author name have been entered
-
-        //Use ajax call to get gradients and confirm this css hasn't been used before
+        //TODO: Use ajax call to get gradients and confirm this css hasn't been used before
         //Will need to put initiateAddGradient in the success callback block
         //  AFTER doing an if (!allPreviousGradientCss.includes(CssToSubmit))
         //      else display error message
@@ -166,8 +159,29 @@ function getRandomGradient() {
         },
         type: "GET",
         success: function(result, status, xhr) {
-            var gradient = result[0];
-            updateRandomGradient(gradient)
+            
+            //TODO: This is a bandaid fix for a bug on the back end
+            //I sometimes return result = undefined from updateRandomGradient, haven't figured out why yet
+            //For now I'll check whether a gradient was returned; if not, make the call again and check again
+            //Need to put a proper fix in though in the api
+            //I also check whether the random gradient matches the current gradient. this will stay.
+            if (result.length > 0) {
+                
+                //Check that retrieved gradient is different from current gradient
+                //If same, get a new gradient
+                var gradient = result[0];
+                var currentGradient = $('#gradient-surprise-css').text();
+                currentGradient = currentGradient.substring(0, currentGradient.length - 1);
+                if (gradient.gradient_css != currentGradient) {
+                    updateRandomGradient(gradient)
+                } else {
+                    getRandomGradient();
+                }
+
+            } else {
+                getRandomGradient();
+            }
+            
         },
         failure: function(result, status, xhr) {
             console.log("something broke :(")
@@ -194,20 +208,34 @@ function updateSurpriseGradSection(gradientCss, gradientName, gradientAuthor) {
 
 function initiateAddGradient() {
 
-    //Gets an array of gradient css, name, and author
-    gradientProperties = getGradientProperties()
+    //Ensure user has entered an author name and gradient name
+    if (gradientInputIsValid()) {
 
-    //POST request, persist gradient to db
-    addGradientAjaxRequest(gradientProperties)
+        //Gets an array of gradient css, name, and author
+        gradientProperties = getGradientProperties()
 
+        //POST request, persist gradient to db
+        addGradientAjaxRequest(gradientProperties)
+
+    } else {
+        validateMessage = "Please enter values for gradient name and author."
+        showTopNotification(validateMessage);
+
+        //Disable submit button for 5 seconds
+        $('#gradient-submit-btn').prop("disabled", true);
+        setTimeout(enableSubmitButton, 5000);
+    }
+}
+
+//Reenable submit button
+function enableSubmitButton() {
+    $('#gradient-submit-btn').prop("disabled", false);
 }
 
 function getGradientProperties() {
 
     //jQuery to get values from css, author, and name fields
-
     var css = "linear-gradient(90deg, " + colorStringsToPersist[0] + " 0%, " + colorStringsToPersist[1]  + " 100%)";
-
     var properties = {gradient_css: css, gradient_name: $('#submit-gradient-name').val(), gradient_author: $('#submit-author-name').val()};
 
     return properties;
@@ -230,9 +258,48 @@ function addGradientAjaxRequest(gradient) {
 		contentType: 'application/json',
 		data: JSON.stringify(payload),
 		success: function(result, status, xhr){
-			//TODO: Display Submission Successful notification
+            
+            //Submission was successful. Notify the user
+            var successMessage = "Submission successful! You're a true artist."
+            showTopNotification(successMessage);
+
+            clearInputFields();
+
+
 		}
 	});
+}
+
+//Validates that user has entered gradient name and author information
+//Very basic for now - TODO check for length, obscenity, etc
+function gradientInputIsValid() {
+    if ($('#submit-gradient-name').val() != null && $('#submit-gradient-name').val() != undefined && $('#submit-author-name').val() != null && $('#submit-author-name').val() != undefined) {
+    	if ($('#submit-gradient-name').val().length > 0 && $('#submit-author-name').val().length >  0 ) {
+        	return true;
+    	}
+    }
+    return false;
+}
+
+//Displays the top notification box for 30 seconds
+function showTopNotification(message) {
+    $('#notification-top').text(message);
+    $('#notification-box-top').fadeToggle("fast", "linear");
+    $('#notification-box-top').css("display", "flex");
+    $('#notification-box-top').css("flex-direction", "column");
+    $('#notification-box-top').css("justify-content", "center");
+
+    //Close notification after 5 seconds
+    setTimeout(closeTopNotification, 5000);
+
+}
+
+function clearInputFields() {
+    $('.gradient-submit-input').val('');
+}
+
+function closeTopNotification() {
+    $('#notification-box-top').fadeToggle("slow", "linear");
 }
 
 //Following django tutorial to get a cookie
