@@ -1,10 +1,6 @@
 // For color conversions:
 // https://github.com/bgrins/TinyColor
 
-//For hanlding user input of text rgb or hex:
-//Do an event listner for lose focus of text input field or submit button
-//  on lose focus, re-gen color pickers
-
 var apiURL = "https://tedwardj11.pythonanywhere.com";
 //var apiURL = "http://127.0.0.1:8000";
 var apiPathRandomGradient = "/api/randomgradient";
@@ -46,10 +42,7 @@ $( document ).ready(function() {
 
     $('#gradient-submit-btn').click(function() {
 
-        //Need to do some validations here
-        //Use jQuery validate to check that a gradient and author name have been entered
-
-        //Use ajax call to get gradients and confirm this css hasn't been used before
+        //TODO: Use ajax call to get gradients and confirm this css hasn't been used before
         //Will need to put initiateAddGradient in the success callback block
         //  AFTER doing an if (!allPreviousGradientCss.includes(CssToSubmit))
         //      else display error message
