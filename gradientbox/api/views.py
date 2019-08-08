@@ -21,6 +21,9 @@ def getRandomGradient(request):
     #Choose a gradient at random
     randomGradient = Gradient.objects.filter(pk = random.randint(1, len(queryset)))
 
+    queryset._result_cache = None
+
+
     #Serialize to JSON
     serializer = GradientSerializer(randomGradient, many=True)
     serializedGradient = JSONRenderer().render(serializer.data)
