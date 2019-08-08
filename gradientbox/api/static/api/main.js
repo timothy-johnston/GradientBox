@@ -295,7 +295,7 @@ function showTopNotification(message) {
 }
 
 function clearInputFields() {
-    $('.gradient-submit-input').val('');
+    $('#submit-author-name').val('');
 }
 
 function closeTopNotification() {
