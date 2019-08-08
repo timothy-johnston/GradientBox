@@ -9,11 +9,11 @@
     }
 
     #welcome-prompt {
-        font-size: 3.0rem !important;
+        font-size: 2.5rem !important;
     }
 
     #welcome-subtitle {
-        font-size: 2.0rem !important;
+        font-size: 1.5rem !important;
     }
 
     .choice-container {
@@ -90,6 +90,7 @@ section {
     height: 75px;
     width: 100%;
     background: #151515;
+    z-index: 99;
 }
 
 #notification-box-top {
@@ -205,6 +206,7 @@ section {
     justify-content: center;
     min-height: 100vh;
     /* border: 1px solid black; */
+    padding-bottom: 15px;
 }
 
 #input-container-group-container {
