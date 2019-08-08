@@ -25,9 +25,9 @@ def getRandomGradient(request):
 
 
     #Serialize to JSON
-    serializer = GradientSerializer(randomGradient[random.randint(1, len(queryset) - 1)], many=False)
+    serializer = GradientSerializer(randomGradient[random.randint(0, len(queryset) - 1)], many=False)
     serializedGradients = JSONRenderer().render(serializer.data)
-    randomGradient = serializedGradients[random.randint(1, len(queryset) - 1)]
+    randomGradient = serializedGradients[random.randint(0, len(queryset))]
 
     return HttpResponse(serializedGradients)
     #return HttpResponse(random.randint(1, len(queryset)))
