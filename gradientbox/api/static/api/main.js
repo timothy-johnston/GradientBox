@@ -1,8 +1,8 @@
 // For color conversions:
 // https://github.com/bgrins/TinyColor
 
-// var apiURL = "https://tedwardj11.pythonanywhere.com";
-var apiURL = "http://127.0.0.1:8000";
+var apiURL = "https://tedwardj11.pythonanywhere.com";
+//var apiURL = "http://127.0.0.1:8000";
 var apiPathRandomGradient = "/api/randomgradient";
 var apiPathGradients = "/api/gradients/";
 var cssFormatCustomHex = true;
