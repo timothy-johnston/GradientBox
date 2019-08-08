@@ -2,7 +2,7 @@
 // https://github.com/bgrins/TinyColor
 
 var apiURL = "https://tedwardj11.pythonanywhere.com";
-//var apiURL = "http://127.0.0.1:8000";
+// var apiURL = "http://127.0.0.1:8000";
 var apiPathRandomGradient = "/api/randomgradient";
 var apiPathGradients = "/api/gradients/";
 var cssFormatCustomHex = true;
@@ -159,8 +159,18 @@ function getRandomGradient() {
         },
         type: "GET",
         success: function(result, status, xhr) {
-            var gradient = result[0];
-            updateRandomGradient(gradient)
+            
+            //TODO: This is a bandaid fix for a bug on the back end
+            //I sometimes return result = undefined from updateRandomGradient, haven't figured out why yet
+            //For now I'll check whether a gradient was returned; if not, make the call again and check again
+            //Need to put a proper fix in though in the api
+            if (result.length > 0) {
+                var gradient = result[0];
+                updateRandomGradient(gradient)
+            } else {
+                getRandomGradient();
+            }
+            
         },
         failure: function(result, status, xhr) {
             console.log("something broke :(")
