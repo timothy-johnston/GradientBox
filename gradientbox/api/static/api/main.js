@@ -1,8 +1,8 @@
 // For color conversions:
 // https://github.com/bgrins/TinyColor
 
-// var apiURL = "https://tedwardj11.pythonanywhere.com";
-var apiURL = "http://127.0.0.1:8000";
+var apiURL = "https://tedwardj11.pythonanywhere.com";
+//var apiURL = "http://127.0.0.1:8000";
 var apiPathRandomGradient = "/api/randomgradient";
 var apiPathGradients = "/api/gradients/";
 var cssFormatCustomHex = true;
@@ -165,11 +165,11 @@ function getRandomGradient() {
             //For now I'll check whether a gradient was returned; if not, make the call again and check again
             //Need to put a proper fix in though in the api
             //I also check whether the random gradient matches the current gradient. this will stay.
-            if (result.length > 0) {
+//            if (result.length > 0) {
                 
                 //Check that retrieved gradient is different from current gradient
                 //If same, get a new gradient
-                var gradient = result[0];
+                var gradient = result;
                 var currentGradient = $('#gradient-surprise-css').text();
                 currentGradient = currentGradient.substring(0, currentGradient.length - 1);
                 if (gradient.gradient_css != currentGradient) {
@@ -178,9 +178,9 @@ function getRandomGradient() {
                     getRandomGradient();
                 }
 
-            } else {
-                getRandomGradient();
-            }
+//            } else {
+//                getRandomGradient();
+//            }
             
         },
         failure: function(result, status, xhr) {
@@ -295,7 +295,7 @@ function showTopNotification(message) {
 }
 
 function clearInputFields() {
-    $('.gradient-submit-input').val('');
+    $('#submit-author-name').val('');
 }
 
 function closeTopNotification() {

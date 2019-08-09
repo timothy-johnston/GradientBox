@@ -19,13 +19,18 @@ def getRandomGradient(request):
     queryset = Gradient.objects.all()
 
     #Choose a gradient at random
-    randomGradient = Gradient.objects.filter(pk = random.randint(1, len(queryset)))
+    randomGradient = queryset
+
+    queryset._result_cache = None
+
 
     #Serialize to JSON
-    serializer = GradientSerializer(randomGradient, many=True)
-    serializedGradient = JSONRenderer().render(serializer.data)
+    serializer = GradientSerializer(randomGradient[random.randint(0, len(queryset) - 1)], many=False)
+    serializedGradients = JSONRenderer().render(serializer.data)
+    randomGradient = serializedGradients[random.randint(0, len(queryset))]
 
-    return HttpResponse(serializedGradient)
+    return HttpResponse(serializedGradients)
+    #return HttpResponse(random.randint(1, len(queryset)))
 
 
 class GradientViewSet(viewsets.ModelViewSet):
