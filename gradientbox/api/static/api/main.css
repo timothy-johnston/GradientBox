@@ -1,3 +1,61 @@
+.social-icons-group {
+	display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    background: #000000a8;
+}
+
+.social-icon-container {
+    margin: 5px;
+}
+
+.fa {
+	padding: 13px;
+	font-size: 1.4rem !important;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+	color: white;
+	width: 48px;
+	height: 48px;
+}
+
+#icons-header {
+    width: 100%;
+    text-align: center;
+    font-size: 2.3rem;
+}
+
+.fa-twitter {
+	background: #55ACEE;
+}
+
+.fa-github {
+	background: #000000;
+}
+
+.fa-linkedin {
+	background: #0077B5;
+}
+
+.fa:hover {
+text-decoration: none;
+color: white;
+}
+
+.fa-twitter:hover {
+	background: #55aceecc;
+}
+
+.fa-github:hover {
+	background: #000000a2;
+}
+
+.fa-linkedin:hover {
+	background: rgba(49, 120, 158, 0.635);
+}
+
 @media (min-width: 0px) and (max-width: 767px) {
 
     .notification-box {
